@@ -1,19 +1,8 @@
-import {nanoid} from "nanoid"
 
 export default function Die(props){
-    let  dotElements = [];
-    for(let i=0;i<props.value;i++){
-        dotElements.push(<div key={nanoid()} className='die-dot'></div>)
-    }
-const styles = {
-    backgroundColor : props.isHeld? "#59E391":"white"
-}
-    return(
-        <div className="die" style={styles} onClick={()=>props.holdDie(props.id)}>
-            <div className="dot-container">
-                {dotElements}
-            </div>
+  return (  
+        <div onClick = {props.holdDice}className = {props.isHeld?"held-die":"die"}>
+            <h2>{props.value}</h2>
         </div>
-
     )
 }
